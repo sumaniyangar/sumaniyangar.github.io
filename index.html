@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suman M | Principal Frontend Engineer & Architect</title>
+  
+  <!-- CSS CDNs: W3.CSS & Font Awesome v4.7.0 -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Google Web Fonts: Raleway for headers, Lato/Roboto for text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* Global Font & System Resets */
+    html, body, h1, h2, h3, h4, h5, h6 {
+      font-family: "Raleway", "Roboto", "Lato", sans-serif;
+    }
+    body {
+      background-color: #f7f9fa;
+      color: #333333;
+      padding-top: 60px; /* Accounts for fixed top navigation bar */
+    }
+
+    /* Transition Mechanics */
+    .app-section {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+    .app-section.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Visual Accent Customizations */
+    .theme-bg {
+      background-color: #1e293b !important; /* Deep Navy Slate */
+      color: #ffffff !important;
+    }
+    .theme-text {
+      color: #0f172a !important;
+    }
+    .accent-bg {
+      background-color: #0ea5e9 !important; /* Tech Blue Accent */
+      color: #ffffff !important;
+    }
+    .accent-text {
+      color: #0ea5e9 !important;
+    }
+
+    /* Fixed Navigation Bar Shadows */
+    .nav-shadow {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Parallax Hero Banner */
+    .parallax-hero {
+      position: relative;
+      background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1920&q=80');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 380px;
+    }
+    .parallax-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7); /* Muted slate mask */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    /* Progress Bar Animation Initial State */
+    .animated-progress {
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.1, 0.8, 0.2, 1);
+    }
+
+    /* Live Editing Hint Styling */
+    .editable {
+      border: 1px transparent dashed;
+      transition: border-color 0.3s, background-color 0.3s;
+    }
+    .editable.editing-active {
+      border-color: #0ea5e9 !important;
+      background-color: rgba(14, 165, 233, 0.05) !important;
+      outline: none;
+    }
+    
+    /* Fixed Action Button for Editing */
+    .edit-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+
+    /* Layout Spacing Adjustments */
+    .card-hover:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: all 0.25s ease;
+    }
+    .card-hover {
+      transition: all 0.25s ease;
+    }
+  </style>
+</head>
+<body class="w3-light-grey">
+
+  <!-- ================= NAV BAR ================= -->
+  <div class="w3-top" style="z-index: 1010;">
+    <div class="w3-bar w3-white nav-shadow w3-padding" style="letter-spacing:1px;">
+      <a href="#work" class="w3-bar-item w3-button w3-text-dark-grey nav-link" id="nav-work">
+        <i class="fa fa-briefcase w3-margin-right"></i><b>WORK PROFILE</b>
+      </a>
+      <a href="#about" class="w3-bar-item w3-button w3-text-dark-grey nav-link" id="nav-about">
+        <i class="fa fa-compass w3-margin-right"></i><b>BEYOND THE DESK</b>
+      </a>
+      <a href="#blog" class="w3-bar-item w3-button w3-text-dark-grey nav-link" id="nav-blog">
+        <i class="fa fa-pencil-square-o w3-margin-right"></i><b>TECH ARTICLES</b>
+      </a>
+      
+      <!-- Right Aligned External LinkedIn Navigation -->
+      <a href="https://www.linkedin.com/in/sumaniyangar" target="_blank" rel="noopener noreferrer" class="w3-bar-item w3-button w3-right accent-bg w3-hover-opacity w3-round w3-hide-small" style="font-weight: 600;">
+        <i class="fa fa-linkedin-square w3-margin-right"></i>LinkedIn <i class="fa fa-external-link" style="font-size: 11px; margin-left: 3px;"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- ================= MAIN VIEW WRAPPER ================= -->
+  <main class="w3-content w3-margin-top" style="max-width:1400px; min-height: calc(100vh - 120px);">
+
+    <!-- ================= VIEW 1: WORK PROFILE ================= -->
+    <section id="work" class="app-section">
+      <div class="w3-row-padding">
+        
+        <!-- Left Sidebar Column (1/3 Width) -->
+        <div class="w3-col l4 m12">
+          <div class="w3-white w3-text-grey w3-card-4 w3-round-large w3-margin-bottom">
+            <!-- Profile Presentation Image -->
+            <div class="w3-display-container">
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" class="w3-round-medium" style="width:100%;" alt="Suman M Portrait">
+              <div class="w3-display-bottomleft w3-container w3-text-white w3-black w3-opacity" style="width: 100%; padding: 12px 16px;">
+                <h2 class="editable" id="profile-name" style="margin:0; font-weight:700;">Suman M</h2>
+              </div>
+            </div>
+            
+            <!-- Contact Details -->
+            <div class="w3-container w3-padding-24">
+              <p class="theme-text" style="font-weight: 600; font-size: 1.15em; margin-top: 0;">
+                <i class="fa fa-briefcase fa-fw w3-margin-right accent-text"></i>
+                <span class="editable" id="profile-title">Principal Frontend Engineer</span>
+              </p>
+              <p>
+                <i class="fa fa-home fa-fw w3-margin-right accent-text"></i>
+                <span class="editable" id="profile-loc">Bengaluru, India</span>
+              </p>
+              <p>
+                <i class="fa fa-envelope fa-fw w3-margin-right accent-text"></i>
+                <span class="editable" id="profile-email">suman.m@example.com</span>
+              </p>
+              <p>
+                <i class="fa fa-phone fa-fw w3-margin-right accent-text"></i>
+                <span class="editable" id="profile-phone">+91 98765 43210</span>
+              </p>
+              <hr style="border-top: 1px solid #e2e8f0;">
+
+              <!-- Competencies / Skill Progress Bars -->
+              <h5 class="w3-large w3-text-dark-grey" style="font-weight: 700;">
+                <i class="fa fa-gears fa-fw w3-margin-right accent-text"></i>Core Competencies
+              </h5>
+              
+              <p style="margin-bottom: 5px;">JavaScript / TypeScript Architecture</p>
+              <div class="w3-light-grey w3-round-xlarge w3-small" style="height: 10px;">
+                <div class="animated-progress accent-bg w3-round-xlarge" style="height: 10px;" data-target-width="95%"></div>
+              </div>
+
+              <p style="margin-bottom: 5px; margin-top: 15px;">React, Next.js & Client-Side Routers</p>
+              <div class="w3-light-grey w3-round-xlarge w3-small" style="height: 10px;">
+                <div class="animated-progress accent-bg w3-round-xlarge" style="height: 10px;" data-target-width="90%"></div>
+              </div>
+
+              <p style="margin-bottom: 5px; margin-top: 15px;">Build Pipelines & Dev Experience (dx)</p>
+              <div class="w3-light-grey w3-round-xlarge w3-small" style="height: 10px;">
+                <div class="animated-progress accent-bg w3-round-xlarge" style="height: 10px;" data-target-width="85%"></div>
+              </div>
+
+              <p style="margin-bottom: 5px; margin-top: 15px;">Web Performance Optimization</p>
+              <div class="w3-light-grey w3-round-xlarge w3-small" style="height: 10px;">
+                <div class="animated-progress accent-bg w3-round-xlarge" style="height: 10px;" data-target-width="92%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Main Column (2/3 Width) -->
+        <div class="w3-col l8 m12">
+          
+          <!-- Experience Card Section -->
+          <div class="w3-container w3-card w3-white w3-round-large w3-margin-bottom w3-padding-24">
+            <h2 class="w3-text-grey w3-padding-8" style="font-weight:700; border-bottom: 2px solid #e2e8f0; margin-top:0;">
+              <i class="fa fa-suitcase fa-fw w3-margin-right accent-text"></i>Work Experience
+            </h2>
+            
+            <!-- Experience Item 1 -->
+            <div class="w3-container w3-margin-top">
+              <h5 class="theme-text" style="font-weight: 700; margin-bottom: 2px;">
+                <span class="editable" id="exp1-title">Principal Software Engineer, Frontend Architecture</span>
+              </h5>
+              <h6 class="accent-text" style="margin-top:0; font-weight:600;">
+                <span class="editable" id="exp1-company">Enterprise Web Solutions Inc.</span>
+                <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">Jan 2023 - Present</span>
+              </h6>
+              
+              <!-- STAR Content Layout -->
+              <div class="w3-container w3-light-grey w3-leftbar w3-border-blue w3-margin-bottom w3-padding-small">
+                <p style="margin: 4px 0;">
+                  <strong class="w3-text-dark-grey">Situation:</strong> A legacy micro-frontend platform suffered from disjointed build targets, resulting in high load overhead and an average load-to-interactive metric exceeding 6.2 seconds.
+                </p>
+                <p style="margin: 4px 0;">
+                  <strong class="w3-text-dark-grey">Task:</strong> Redesign client-side module compilation rules to harmonize asynchronous assets and decrease overall browser thread blockage.
+                </p>
+                <p style="margin: 4px 0;">
+                  <strong class="w3-text-dark-grey">Action:</strong> Conducted process coordination to align three cross-functional feature pods around shared design standards, implemented aggressive dynamic imports, and customized Webpack/Vite compilation workflows.
+                </p>
+                <p style="margin: 4px 0;">
+                  <strong class="w3-text-dark-grey">Result:</strong> Accelerated first contentful paint by 68% and optimized memory usage profiles by 40%, generating zero-regression service stability.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Experience Item 2 -->
+            <div class="w3-container w3-margin-top">
+              <h5 class="theme-text" style="font-weight: 700; margin-bottom: 2px;">
+                <span class="editable" id="exp2-title">Senior UI Architect</span>
+              </h5>
+              <h6 class="accent-text" style="margin-top:0; font-weight:600;">
+                <span class="editable" id="exp2-company">Global Scaling Tech</span>
+                <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">Mar 2020 - Dec 2022</span>
+              </h6>
+              
+              <div class="w3-container w3-light-grey w3-leftbar w3-border-blue w3-margin-bottom w3-padding-small">
+                <p style="margin: 4px 0;">
+                  <strong class="w3-text-dark-grey">Situation:</strong> Multiple business lines deployed separate styled component files, leading to bloated load payloads and inconsistent system telemetry.
+                </p>
+                <p style="margin: 4px 0;">
+                  <strong class="w3-text-dark-grey">Task:</strong> Drive code consolidation and introduce structured engineering discipline for frontend deployment paths.
+                </p>
+                <p style="margin: 4px 0;">
+                  <strong class="w3-text-dark-grey">Action:</strong> Governed system optimization by architecting a modern, highly decoupled static UI component library and implementing clean programmatic testing loops.
+                </p>
+                <p style="margin: 4px 0;">
+                  <strong class="w3-text-dark-grey">Result:</strong> Removed over 2.4 megabytes of duplicate stylesheet deliveries, reduced code maintenance ticket generation by 33%, and accelerated the release cycle from bi-weekly to continuous hourly deployments.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Card Section -->
+          <div class="w3-container w3-card w3-white w3-round-large w3-padding-24">
+            <h2 class="w3-text-grey w3-padding-8" style="font-weight:700; border-bottom: 2px solid #e2e8f0; margin-top:0;">
+              <i class="fa fa-graduation-cap fa-fw w3-margin-right accent-text"></i>Education
+            </h2>
+            <div class="w3-container w3-margin-top">
+              <h5 class="theme-text" style="font-weight:700; margin-bottom: 2px;">
+                <span class="editable" id="edu-degree">M.S. in Computer Science</span>
+              </h5>
+              <h6 class="accent-text" style="margin-top: 0; font-weight: 600;">
+                <span class="editable" id="edu-school">Indian Institute of Science (IISc) / Stanford Online Studies</span>
+                <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">Graduated June 2018</span>
+              </h6>
+              <p class="editable" id="edu-desc" style="color: #666;">Specialization in Software Architecture & High-Performance Web Infrastructures.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VIEW 2: ABOUT & HOBBIES ================= -->
+    <section id="about" class="app-section">
+      <!-- Parallax Hero Block -->
+      <div class="parallax-hero w3-round-large">
+        <div class="parallax-overlay w3-round-large">
+          <span class="w3-tag w3-white w3-text-dark-grey w3-large w3-padding w3-round" style="letter-spacing: 4px; font-weight: 700;">
+            BEYOND THE DESK
+          </span>
+          <p class="w3-text-white w3-center w3-margin-top editable" id="parallax-sub" style="max-width: 600px; font-size: 1.1em; padding: 0 16px;">
+            How calculated discipline, process architecture, and analytical observation shape a comprehensive technical leadership style.
+          </p>
+        </div>
+      </div>
+
+      <!-- Responsive 3-Column Strength Mapping Grid -->
+      <div class="w3-row-padding w3-margin-top">
+        
+        <!-- Hobby Card 1 -->
+        <div class="w3-col l4 m12 s12 w3-margin-bottom">
+          <div class="w3-card w3-white w3-round-large w3-padding-24 card-hover" style="height: 100%; min-height: 380px;">
+            <div class="w3-center w3-margin-bottom">
+              <span class="accent-bg w3-circle w3-padding-16" style="display: inline-block; width: 60px; height: 60px; line-height: 28px;">
+                <i class="fa fa-road w3-xlarge"></i>
+              </span>
+            </div>
+            <h3 class="w3-center theme-text" style="font-weight:700;">Outdoor Exploration</h3>
+            <p class="w3-center w3-text-grey" style="font-size:0.9em; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Resilience & Risk Management</p>
+            <hr style="border-top: 1px solid #e2e8f0; width: 60%; margin: 12px auto;">
+            <p class="w3-text-grey editable" id="hobby-desc-1" style="line-height:1.6; font-size: 0.95em;">
+              Conquering complex vertical terrain demands detailed route projection, situational adaptability, and strict mitigation of physical risk. The analytical processes and physical endurance required on high-altitude trails translate directly to leading high-pressure product deployments, fostering system stability, and building resilient distributed web systems.
+            </p>
+          </div>
+        </div>
+
+        <!-- Hobby Card 2 -->
+        <div class="w3-col l4 m12 s12 w3-margin-bottom">
+          <div class="w3-card w3-white w3-round-large w3-padding-24 card-hover" style="height: 100%; min-height: 380px;">
+            <div class="w3-center w3-margin-bottom">
+              <span class="accent-bg w3-circle w3-padding-16" style="display: inline-block; width: 60px; height: 60px; line-height: 28px;">
+                <i class="fa fa-cutlery w3-xlarge"></i>
+              </span>
+            </div>
+            <h3 class="w3-center theme-text" style="font-weight:700;">Culinary Experiments</h3>
+            <p class="w3-center w3-text-grey" style="font-size:0.9em; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Precision & Iterative Loops</p>
+            <hr style="border-top: 1px solid #e2e8f0; width: 60%; margin: 12px auto;">
+            <p class="w3-text-grey editable" id="hobby-desc-2" style="line-height:1.6; font-size: 0.95em;">
+              Constructing recipes is structurally comparable to compiling modular codebase environments. It relies on meticulous, process-oriented measurement, exact component temperatures, and systemic adjustment loops. This focus on iterative improvements mirrors developer-driven operations, allowing for constant deployment, measurement, and systemic refinement.
+            </p>
+          </div>
+        </div>
+
+        <!-- Hobby Card 3 -->
+        <div class="w3-col l4 m12 s12 w3-margin-bottom">
+          <div class="w3-card w3-white w3-round-large w3-padding-24 card-hover" style="height: 100%; min-height: 380px;">
+            <div class="w3-center w3-margin-bottom">
+              <span class="accent-bg w3-circle w3-padding-16" style="display: inline-block; width: 60px; height: 60px; line-height: 28px;">
+                <i class="fa fa-film w3-xlarge"></i>
+              </span>
+            </div>
+            <h3 class="w3-center theme-text" style="font-weight:700;">Media & Movie Analysis</h3>
+            <p class="w3-center w3-text-grey" style="font-size:0.9em; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Creative Framing & Narrative</p>
+            <hr style="border-top: 1px solid #e2e8f0; width: 60%; margin: 12px auto;">
+            <p class="w3-text-grey editable" id="hobby-desc-3" style="line-height:1.6; font-size: 0.95em;">
+              Evaluating the structural design of cinematic projects helps deepen understanding of context, spatial empathy, and design intent. Applying structural deconstruction and observing visual timing techniques informs user experience design—bridging complex application states with human-centered product journeys that prioritize clarity.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= VIEW 3: BLOG STREAM VIEW ================= -->
+    <section id="blog" class="app-section">
+      <div class="w3-row-padding">
+        
+        <!-- Primary Article Stream Column (2/3 Width) -->
+        <div class="w3-col l8 m12 w3-margin-bottom">
+          
+          <!-- Article Box 1 -->
+          <article class="w3-card w3-white w3-round-large w3-margin-bottom card-hover" style="overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" style="width:100%; height:250px; object-fit: cover;" alt="Monochrome Code View">
+            <div class="w3-container w3-padding-24">
+              <div class="w3-margin-bottom">
+                <span class="w3-tag theme-bg w3-round w3-small" style="padding: 4px 8px;">Architecture</span>
+                <span class="w3-text-grey w3-right" style="font-size: 0.9em;"><i class="fa fa-calendar-o w3-margin-right"></i>May 2026</span>
+              </div>
+              <h3 class="theme-text" style="font-weight:700; margin-top:0;">
+                <span class="editable" id="blog-title-1">Building Zero-Infrastructure Static Platforms</span>
+              </h3>
+              
+              <div class="w3-text-grey editable" id="blog-content-1" style="line-height: 1.6; font-size: 1em;">
+                <p>Deploying responsive, production-ready systems is often over-engineered with multi-tier CI/CD build scripts and runtime computing infrastructure. By packaging all styling logic, navigation mechanics, and routing controls into a single, highly structured, decoupled static file, engineers can utilize modern web standards to eliminate execution paths entirely.</p>
+                <p>Modern CDN capabilities provide sub-millisecond static deliveries directly at the edge, allowing single-file models to handle rich dynamic functions. When backed by browser-level states and visual templates, updates can be handled instantly in the browser without requiring compilation. This shift reduces system architecture costs, minimizes threat surfaces, and ensures standard-compliant performance that scales efficiently.</p>
+              </div>
+              
+              <div class="w3-row w3-margin-top w3-padding-16" style="border-top: 1px solid #f1f5f9;">
+                <div class="w3-col s8">
+                  <span class="w3-tag w3-light-grey w3-text-grey w3-round w3-small" style="margin-right:4px;">#StaticWeb</span>
+                  <span class="w3-tag w3-light-grey w3-text-grey w3-round w3-small" style="margin-right:4px;">#CDNDelivery</span>
+                  <span class="w3-tag w3-light-grey w3-text-grey w3-round w3-small">#VanillaJS</span>
+                </div>
+                <div class="w3-col s4 w3-right-align">
+                  <span class="theme-text" style="font-weight:600; cursor:pointer;" onclick="alert('Mock Article Link: This represents an interactive, custom article detail handler.');">Read Full Text <i class="fa fa-arrow-right"></i></span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Placeholder/Dynamic Mock Article Container -->
+          <article class="w3-card w3-white w3-round-large w3-padding-24 w3-center card-hover">
+            <i class="fa fa-plus-circle accent-text w3-xxlarge w3-margin-bottom"></i>
+            <h4 class="theme-text" style="font-weight:700; margin-top: 0;">Need to add another post?</h4>
+            <p class="w3-text-grey" style="max-width:480px; margin: 0 auto 16px auto;">Use the live edit toggle button in the lower corner of the viewport, click this block, and write your content directly inside the browser window before committing your edits.</p>
+          </article>
+        </div>
+
+        <!-- Blog Stream Sidebar Column (1/3 Width) -->
+        <div class="w3-col l4 m12">
+          
+          <!-- Author Info Card -->
+          <div class="w3-card w3-white w3-round-large w3-margin-bottom w3-padding-24">
+            <h4 class="theme-text" style="font-weight:700; margin-top:0; border-bottom: 2px solid #e2e8f0; padding-bottom:8px;">Author</h4>
+            <div class="w3-row w3-margin-top">
+              <div class="w3-col s3">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" class="w3-circle" style="width:100%; max-width:60px;" alt="Suman M">
+              </div>
+              <div class="w3-col s9 w3-container">
+                <h5 class="theme-text" style="margin:0; font-weight:700;">Suman M</h5>
+                <p class="w3-text-grey" style="margin:4px 0 0 0; font-size:0.9em;">Technical Architect interested in elegant UI, robust tooling, and reducing overhead.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tag Clouds Card -->
+          <div class="w3-card w3-white w3-round-large w3-padding-24">
+            <h4 class="theme-text" style="font-weight:700; margin-top:0; border-bottom: 2px solid #e2e8f0; padding-bottom:8px;">System Tags</h4>
+            <div class="w3-margin-top">
+              <span class="w3-tag w3-teal w3-round w3-margin-bottom" style="font-size:12px;">Web Architecture</span>
+              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">Decoupled Frameworks</span>
+              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">Module Federation</span>
+              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">Tailored CSS</span>
+              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">Performance Optimization</span>
+              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">Browser Mechanics</span>
+              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">Zero Overhead</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= EDIT TOGGLE FLOATING ACTION BUTTON ================= -->
+  <button id="edit-toggle-btn" class="w3-button accent-bg w3-hover-blue w3-circle edit-fab w3-padding-16" onclick="toggleLiveEditing()" title="Toggle Web Editing Mode">
+    <i class="fa fa-pencil w3-large" id="edit-icon"></i>
+  </button>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="w3-container theme-bg w3-center w3-margin-top w3-padding-24" style="margin-top: 80px !important;">
+    <p style="font-weight: 600;">Suman M — Senior Frontend Portfolio</p>
+    <div class="w3-xlarge w3-padding-16">
+      <a href="https://github.com/sumaniyangar" target="_blank" rel="noopener noreferrer" class="w3-text-white w3-hover-text-grey w3-margin-right"><i class="fa fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/sumaniyangar" target="_blank" rel="noopener noreferrer" class="w3-text-white w3-hover-text-grey w3-margin-right"><i class="fa fa-linkedin"></i></a>
+    </div>
+    <p class="w3-small w3-text-gray" style="opacity: 0.7;">
+      Created in 2026. Self-contained static compilation utilizing <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-text-white" style="text-decoration: underline;">W3.CSS</a>.
+    </p>
+  </footer>
+
+  <!-- ================= VANILLA JAVASCRIPT CONTROLLER ================= -->
+  <script>
+    /**
+     * Elegant Single Page Application Router
+     * Listens to URI anchor adjustments and transitions view nodes.
+     */
+    class PortfolioRouter {
+      constructor() {
+        this.sections = document.querySelectorAll('.app-section');
+        this.navLinks = document.querySelectorAll('.nav-link');
+        
+        // Dynamic route matching lookup
+        this.routes = {
+          '#work': 'work',
+          '#about': 'about',
+          '#blog': 'blog'
+        };
+
+        window.addEventListener('hashchange', () => this.handleRouting());
+        window.addEventListener('DOMContentLoaded', () => this.handleRouting());
+      }
+
+      handleRouting() {
+        let activeHash = window.location.hash || '#work';
+        
+        // Handle unexpected navigation values safely
+        if (!this.routes[activeHash]) {
+          activeHash = '#work';
+        }
+
+        const targetId = this.routes[activeHash];
+
+        this.sections.forEach(section => {
+          if (section.id === targetId) {
+            section.classList.add('active');
+            
+            // Trigger specific page load actions (e.g., Progress Bar transitions)
+            if (targetId === 'work') {
+              this.animateProgressBars();
+            }
+          } else {
+            section.classList.remove('active');
+          }
+        });
+
+        // Sync and highlight current navigation tab
+        this.updateNavUi(activeHash);
+
+        // Smoothly return context view back to header
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+
+      updateNavUi(currentHash) {
+        this.navLinks.forEach(link => {
+          const matchingId = `nav-${this.routes[currentHash]}`;
+          if (link.id === matchingId) {
+            link.classList.remove('w3-text-dark-grey');
+            link.classList.add('theme-bg', 'w3-round');
+          } else {
+            link.classList.remove('theme-bg', 'w3-round');
+            link.classList.add('w3-text-dark-grey');
+          }
+        });
+      }
+
+      animateProgressBars() {
+        // Find competencies with dynamic targets and animate width
+        const progressElements = document.querySelectorAll('.animated-progress');
+        setTimeout(() => {
+          progressElements.forEach(el => {
+            const target = el.getAttribute('data-target-width') || '0%';
+            el.style.width = target;
+          });
+        }, 150); // Small operational buffer to allow rendering threads to complete
+      }
+    }
+
+    // Initialize SPA controller
+    const AppRouter = new PortfolioRouter();
+
+    /**
+     * Browser Viewport Live Editor Engine
+     * Configures toggled HTML5 'contenteditable' configurations on designated fields.
+     */
+    let editModeActive = false;
+
+    function toggleLiveEditing() {
+      editModeActive = !editModeActive;
+      const targetBlocks = document.querySelectorAll('.editable');
+      const actionButton = document.getElementById('edit-toggle-btn');
+      const actionIcon = document.getElementById('edit-icon');
+
+      targetBlocks.forEach(element => {
+        if (editModeActive) {
+          element.setAttribute('contenteditable', 'true');
+          element.classList.add('editing-active');
+        } else {
+          element.removeAttribute('contenteditable');
+          element.classList.remove('editing-active');
+        }
+      });
+
+      // Update Floating Control styling
+      if (editModeActive) {
+        actionButton.classList.remove('accent-bg', 'w3-hover-blue');
+        actionButton.classList.add('w3-green', 'w3-hover-teal');
+        actionIcon.classList.remove('fa-pencil');
+        actionIcon.classList.add('fa-floppy-o');
+        actionButton.setAttribute('title', 'Save & Lock Changes');
+        
+        // Notify user elegantly
+        const notification = document.createElement('div');
+        notification.className = 'w3-panel w3-blue w3-animate-bottom w3-display-bottomleft w3-margin-left';
+        notification.style.position = 'fixed';
+        notification.style.bottom = '16px';
+        notification.style.zIndex = '10000';
+        notification.style.padding = '8px 16px';
+        notification.innerHTML = '<p style="margin:0;"><i class="fa fa-info-circle w3-margin-right"></i><b>Editing Mode Active:</b> Edit any text element on screen. Copy the source when finished to save.</p>';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.classList.add('w3-animate-opacity');
+          notification.style.opacity = '0';
+          setTimeout(() => notification.remove(), 400);
+        }, 5000);
+      } else {
+        actionButton.classList.remove('w3-green', 'w3-hover-teal');
+        actionButton.classList.add('accent-bg', 'w3-hover-blue');
+        actionIcon.classList.remove('fa-floppy-o');
+        actionIcon.classList.add('fa-pencil');
+        actionButton.setAttribute('title', 'Toggle Web Editing Mode');
+      }
+    }
+  </script>
+</body>
+</html>
