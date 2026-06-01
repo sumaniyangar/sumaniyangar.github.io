@@ -22,18 +22,7 @@
     body {
       background-color: #f2f6f4; /* Subtle Sage Tinted Grey */
       color: #2d3748;
-      padding-top: 60px; /* Accounts for fixed top navigation bar */
-    }
-
-    /* Transition Mechanics */
-    .app-section {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-    }
-    .app-section.active {
-      display: block;
-      opacity: 1;
+      padding-top: 80px; /* Accounts for fixed top navigation bar */
     }
 
     /* Light Green/Forest Accent Customizations */
@@ -55,29 +44,6 @@
     /* Fixed Navigation Bar Shadows */
     .nav-shadow {
       box-shadow: 0 4px 12px rgba(30, 58, 47, 0.08);
-    }
-
-    /* Parallax Hero Banner with Raw Technical Image Background */
-    .parallax-hero {
-      position: relative;
-      background-image: url('https://raw.githubusercontent.com/sumaniyangar/sumaniyangar.github.io/main/0CB27915-A87D-429F-B685-2C9BB7DF2C02_1_105_c.jpeg');
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 380px;
-    }
-    .parallax-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(30, 58, 47, 0.8); /* Forest Slate Mask */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
     }
 
     /* Live Editing Hint Styling */
@@ -113,21 +79,15 @@
 </head>
 <body class="w3-light-grey">
 
-  <!-- ================= NAV BAR ================= -->
+  <!-- ================= TOP HEADER BAR ================= -->
   <div class="w3-top" style="z-index: 1010;">
-    <div class="w3-bar w3-white nav-shadow w3-padding" style="letter-spacing:1px;">
-      <a href="#work" class="w3-bar-item w3-button w3-text-dark-grey nav-link" id="nav-work">
-        <i class="fa fa-briefcase w3-margin-right"></i><b>WORK PROFILE</b>
-      </a>
-      <a href="#about" class="w3-bar-item w3-button w3-text-dark-grey nav-link" id="nav-about">
-        <i class="fa fa-compass w3-margin-right"></i><b>BEYOND THE DESK</b>
-      </a>
-      <a href="#blog" class="w3-bar-item w3-button w3-text-dark-grey nav-link" id="nav-blog">
-        <i class="fa fa-pencil-square-o w3-margin-right"></i><b>TECH ARTICLES</b>
-      </a>
+    <div class="w3-bar w3-white nav-shadow w3-padding" style="letter-spacing:1px; display: flex; align-items: center; justify-content: space-between;">
+      <div class="w3-bar-item w3-text-dark-grey" style="font-weight: 700; font-size: 1.1em; padding: 8px 16px;">
+        <i class="fa fa-code w3-margin-right accent-text"></i>SUMAN M <span class="w3-hide-small w3-text-grey" style="font-weight: normal; font-size: 0.9em; margin-left: 8px;">| Senior Consultant</span>
+      </div>
       
       <!-- Right Aligned External LinkedIn Navigation -->
-      <a href="https://linkedin.com/in/sumaniyangar-m-164351166/" target="_blank" rel="noopener noreferrer" class="w3-bar-item w3-button w3-right accent-bg w3-hover-opacity w3-round w3-hide-small" style="font-weight: 600;">
+      <a href="https://linkedin.com/in/sumaniyangar-m-164351166/" target="_blank" rel="noopener noreferrer" class="w3-bar-item w3-button accent-bg w3-hover-opacity w3-round" style="font-weight: 600; margin-right: 16px;">
         <i class="fa fa-linkedin-square w3-margin-right"></i>LinkedIn <i class="fa fa-external-link" style="font-size: 11px; margin-left: 3px;"></i>
       </a>
     </div>
@@ -136,378 +96,263 @@
   <!-- ================= MAIN VIEW WRAPPER ================= -->
   <main class="w3-content w3-margin-top" style="max-width:1400px; min-height: calc(100vh - 120px);">
 
-    <!-- ================= VIEW 1: WORK PROFILE ================= -->
-    <section id="work" class="app-section">
-      <div class="w3-row-padding">
-        
-        <!-- Left Sidebar Column (1/3 Width) -->
-        <div class="w3-col l4 m12">
-          <div class="w3-white w3-text-grey w3-card-4 w3-round-large w3-margin-bottom">
-            <!-- Profile Presentation Image -->
-            <div class="w3-display-container">
-              <!-- Using Raw GitHub URL as direct source, with relative profile.jpg as fallback -->
-              <img src="https://raw.githubusercontent.com/sumaniyangar/sumaniyangar.github.io/main/0CB27915-A87D-429F-B685-2C9BB7DF2C02_1_105_c.jpeg" onerror="this.src='profile.jpg'" class="w3-round-medium" style="width:100%; object-fit: cover;" alt="Suman M Portrait">
-              <div class="w3-display-bottomleft w3-container w3-text-white w3-black w3-opacity" style="width: 100%; padding: 12px 16px;">
-                <h2 class="editable" id="profile-name" style="margin:0; font-weight:700;">SUMAN M</h2>
-              </div>
-            </div>
-            
-            <!-- Contact Details -->
-            <div class="w3-container w3-padding-24">
-              <p class="theme-text" style="font-weight: 600; font-size: 1.15em; margin-top: 0;">
-                <i class="fa fa-briefcase fa-fw w3-margin-right accent-text"></i>
-                <span class="editable" id="profile-title">Senior Software Engineer Consultant ( ServiceNow Platform & Tech Lead )</span>
-              </p>
-              <p>
-                <i class="fa fa-home fa-fw w3-margin-right accent-text"></i>
-                <span class="editable" id="profile-loc">Bengaluru, India</span>
-              </p>
-              <p>
-                <i class="fa fa-envelope fa-fw w3-margin-right accent-text"></i>
-                <span class="editable" id="profile-email">sumaniyangar29@gmail.com</span>
-              </p>
-              <p>
-                <i class="fa fa-phone fa-fw w3-margin-right accent-text"></i>
-                <span class="editable" id="profile-phone">+91-8277497688</span>
-              </p>
-              <hr style="border-top: 1px solid #e2e8f0;">
-
-              <!-- Core ServiceNow Progress Competencies (Star Ratings) -->
-              <h5 class="w3-large w3-text-dark-grey" style="font-weight: 700;">
-                <i class="fa fa-gears fa-fw w3-margin-right accent-text"></i>Core Competencies
-              </h5>
-              
-              <div style="margin-bottom: 12px;">
-                <p style="margin: 0 0 4px 0; font-size: 0.95em;">ServiceNow Administration & CSA</p>
-                
-              </div>
-
-              <div style="margin-bottom: 12px;">
-                <p style="margin: 0 0 4px 0; font-size: 0.95em;">ITSM, ITOM, CSM Module Deployments</p>
-              </div>
-
-              <div style="margin-bottom: 12px;">
-                <p style="margin: 0 0 4px 0; font-size: 0.95em;">CMDB & CSDM 4.0 Governance</p>
-              </div>
-
-              <div style="margin-bottom: 12px;">
-                <p style="margin: 0 0 4px 0; font-size: 0.95em;">Integrations (REST/SOAP &amp; IntegrationHub)</p>
-              </div>
-
-              <div style="margin-bottom: 12px;">
-                <p style="margin: 0 0 4px 0; font-size: 0.95em;">System Monitoring (Grafana/Prometheus)</p>
-              </div>
-
-              <hr style="border-top: 1px solid #e2e8f0; margin-top: 24px;">
-
-              <!-- Certifications Sidebar Section -->
-              <h5 class="w3-large w3-text-dark-grey" style="font-weight: 700; margin-bottom: 12px;">
-                <i class="fa fa-certificate fa-fw w3-margin-right accent-text"></i>Certifications
-              </h5>
-              <ul class="w3-ul" style="font-size:0.9em; padding-left: 0;">
-                <li style="padding: 6px 0;">ServiceNow CSA</li>
-                <li style="padding: 6px 0;">ServiceNow CIS-Discovery</li>
-                <li style="padding: 6px 0;">Python PCAP & PCPP</li>
-                <li style="padding: 6px 0;">Docker, K8s & Terraform</li>
-                <li style="padding: 6px 0;">Cyber Security - Attack Prevention</li>
-              </ul>
+    <!-- ================= WORK PROFILE ================= -->
+    <div class="w3-row-padding">
+      
+      <!-- Left Sidebar Column (1/3 Width) -->
+      <div class="w3-col l4 m12">
+        <div class="w3-white w3-text-grey w3-card-4 w3-round-large w3-margin-bottom">
+          <!-- Profile Presentation Image -->
+          <div class="w3-display-container">
+            <!-- Using Raw GitHub URL as direct source, with relative profile.jpg as fallback -->
+            <img src="https://raw.githubusercontent.com/sumaniyangar/sumaniyangar.github.io/main/0CB27915-A87D-429F-B685-2C9BB7DF2C02_1_105_c.jpeg" onerror="this.src='profile.jpg'" class="w3-round-medium" style="width:100%; object-fit: cover;" alt="Suman M Portrait">
+            <div class="w3-display-bottomleft w3-container w3-text-white w3-black w3-opacity" style="width: 100%; padding: 12px 16px;">
+              <h2 class="editable" id="profile-name" style="margin:0; font-weight:700;">SUMAN M</h2>
             </div>
           </div>
-        </div>
-
-        <!-- Right Main Column (2/3 Width) -->
-        <div class="w3-col l8 m12">
           
-          <!-- Experience Card Section -->
-          <div class="w3-container w3-card w3-white w3-round-large w3-margin-bottom w3-padding-24">
-            <h2 class="w3-text-grey w3-padding-8" style="font-weight:700; border-bottom: 2px solid #e2e8f0; margin-top:0;">
-              <i class="fa fa-suitcase fa-fw w3-margin-right accent-text"></i>Work Experience
-            </h2>
+          <!-- Contact Details -->
+          <div class="w3-container w3-padding-24">
+            <p class="theme-text" style="font-weight: 600; font-size: 1.15em; margin-top: 0;">
+              <i class="fa fa-briefcase fa-fw w3-margin-right accent-text"></i>
+              <span class="editable" id="profile-title">Senior Software Engineer Consultant ( ServiceNow Platform & Tech Lead )</span>
+            </p>
+            <p>
+              <i class="fa fa-home fa-fw w3-margin-right accent-text"></i>
+              <span class="editable" id="profile-loc">Bengaluru, India</span>
+            </p>
+            <p>
+              <i class="fa fa-envelope fa-fw w3-margin-right accent-text"></i>
+              <span class="editable" id="profile-email">sumaniyangar29@gmail.com</span>
+            </p>
+            <p>
+              <i class="fa fa-phone fa-fw w3-margin-right accent-text"></i>
+              <span class="editable" id="profile-phone">+91-8277497688</span>
+            </p>
+            <hr style="border-top: 1px solid #e2e8f0;">
+
+            <!-- Core ServiceNow Progress Competencies (Star Ratings) -->
+            <h5 class="w3-large w3-text-dark-grey" style="font-weight: 700;">
+              <i class="fa fa-gears fa-fw w3-margin-right accent-text"></i>Core Competencies
+            </h5>
             
-            <!-- Experience Item 1 -->
-            <div class="w3-container w3-margin-top">
-              <h5 class="theme-text" style="font-weight: 700; margin-bottom: 2px;">
-                <span class="editable" id="exp1-title">ServiceNow Platform Lead & Technical Lead</span>
-              </h5>
-              <h6 class="accent-text" style="margin-top:0; font-weight:600;">
-                <span class="editable" id="exp1-company">LTIMindtree</span>
-                <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">2024 - Present</span>
-              </h6>
-              
-              <!-- STAR Content Layout -->
-              <div class="w3-container w3-light-grey w3-leftbar w3-border-emerald w3-margin-bottom w3-padding-small">
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Team Leadership:</strong> Directed 2 cross-functional delivery teams across ITSM, CSM, and ITOM landscapes to maintain high-availability operations.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Stakeholder Alignment:</strong> Bridged the gap between C-level executives and development teams by converting business needs into technical architectures.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Risk Mitigation:</strong> Spearheaded complex, enterprise-scale platform upgrades and system migrations with zero business downtime.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Integration Architecture:</strong> Governed code reviews, release management, and custom IntegrationHub workflows while ensuring SAM/HAM compliance.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Data Governance:</strong> Aligned production environments with CSDM 4.0 frameworks, reducing CMDB configuration errors via strict audit cycles.
-                </p>
-              </div>
-            </div>
-            
-            <!-- Experience Item 2 -->
-            <div class="w3-container w3-margin-top">
-              <h5 class="theme-text" style="font-weight: 700; margin-bottom: 2px;">
-                <span class="editable" id="exp2-title">Senior ServiceNow Consultant & Administrator</span>
-              </h5>
-              <h6 class="accent-text" style="margin-top:0; font-weight:600;">
-                <span class="editable" id="exp2-company">LTIMindtree</span>
-                <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">2022 - 2024</span>
-              </h6>
-              
-              <div class="w3-container w3-light-grey w3-leftbar w3-border-emerald w3-margin-bottom w3-padding-small">
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">CMDB & CSDM 4.0 Governance:</strong> Administered CMDB modules, data reconciliation, and CI relationship mapping to increase overall platform health scores.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">ITOM Automation:</strong> Designed automated incident pipelines by integrating Grafana/Prometheus with Event Management, reducing MTTD for critical events.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">ITSM Workflow Engineering:</strong> Optimized core Incident, Change, Problem, and Knowledge workflows using Glide APIs, Script Includes, and Business Rules.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Incident Response & RCA:</strong> Hosted high-priority technical bridge calls, resolved critical platform escalations, and authored comprehensive RCA runbooks.
-                </p>
-                 <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">QA & Release Management:</strong> Executed regression testing for platform releases to preserve Out-Of-The-Box (OOTB) features and compliance.
-                </p>
+            <div style="margin-bottom: 12px;">
+              <p style="margin: 0 0 4px 0; font-size: 0.95em;">ServiceNow Administration & CSA</p>
+              <div style="font-size: 1.1em; letter-spacing: 3px;">
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
               </div>
             </div>
 
-            <!-- Experience Item 3 -->
-            <div class="w3-container w3-margin-top">
-              <h5 class="theme-text" style="font-weight: 700; margin-bottom: 2px;">
-                <span class="editable" id="exp3-title">ServiceNow & Anaplan Systems Administrator | Analyst</span>
-              </h5>
-              <h6 class="accent-text" style="margin-top:0; font-weight:600;">
-                <span class="editable" id="exp3-company">LTIMindtree / Enterprise Systems</span>
-                <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">2021 - 2022</span>
-              </h6>
-              
-              <div class="w3-container w3-light-grey w3-leftbar w3-border-emerald w3-margin-bottom w3-padding-small">
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Cross-Platform Administration:</strong> Managed platform maintenance, ACL-based security configurations, and user access controls across ServiceNow and Anaplan ecosystems.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Data Synchronization:</strong> Build secure automated connections and manage transactional data models across diverse operational modules.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">L2/L3 Incident Resolution:</strong> Led cross-platform troubleshooting and root cause analysis (RCA) while leveraging OOTB configurations to prevent regressions.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Workflow Automation:</strong> Architected automated Workflows and Service Catalogs using Flow Designer and Workflow Editor to reduce manual request backlogs.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">A2P Compliance Supervision:</strong> Supervised enterprise Application-to-Person messaging operations, auditing brand registrations and carrier pipelines for regulatory compliance.
-                </p>
+            <div style="margin-bottom: 12px;">
+              <p style="margin: 0 0 4px 0; font-size: 0.95em;">ITSM, ITOM, CSM Module Deployments</p>
+              <div style="font-size: 1.1em; letter-spacing: 3px;">
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
               </div>
             </div>
 
-            <!-- Experience Item 4 -->
-            <div class="w3-container w3-margin-top">
-              <h5 class="theme-text" style="font-weight: 700; margin-bottom: 2px;">
-                <span class="editable" id="exp4-title">Data Developer Intern</span>
-              </h5>
-              <h6 class="accent-text" style="margin-top:0; font-weight:600;">
-                <span class="editable" id="exp4-company">Embibe (Ed-Tech)</span>
-                <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">Apr 2019 - Sep 2019</span>
-              </h6>
-              <div class="w3-container w3-light-grey w3-leftbar w3-border-emerald w3-margin-bottom w3-padding-small">
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Data-Driven Insights:</strong> Built analytics workflows supporting personalized learning models to improve student engagement metrics within the ed-tech ecosystem.
-                </p>
-                <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Workflow Automation:</strong> Automated backend data pipelines to streamline the delivery of educational performance insights.
-                </p>
+            <div style="margin-bottom: 12px;">
+              <p style="margin: 0 0 4px 0; font-size: 0.95em;">CMDB & CSDM 4.0 Governance</p>
+              <div style="font-size: 1.1em; letter-spacing: 3px;">
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star-o w3-text-grey" style="opacity: 0.5;"></i>
               </div>
             </div>
 
+            <div style="margin-bottom: 12px;">
+              <p style="margin: 0 0 4px 0; font-size: 0.95em;">Integrations (REST/SOAP &amp; IntegrationHub)</p>
+              <div style="font-size: 1.1em; letter-spacing: 3px;">
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star-o w3-text-grey" style="opacity: 0.5;"></i>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 12px;">
+              <p style="margin: 0 0 4px 0; font-size: 0.95em;">System Monitoring (Grafana/Prometheus)</p>
+              <div style="font-size: 1.1em; letter-spacing: 3px;">
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star accent-text"></i>
+                <i class="fa fa-star-o w3-text-grey" style="opacity: 0.5;"></i>
+              </div>
+            </div>
+
+            <hr style="border-top: 1px solid #e2e8f0; margin-top: 24px;">
+
+            <!-- Certifications Sidebar Section -->
+            <h5 class="w3-large w3-text-dark-grey" style="font-weight: 700; margin-bottom: 12px;">
+              <i class="fa fa-certificate fa-fw w3-margin-right accent-text"></i>Certifications
+            </h5>
+            <ul class="w3-ul" style="font-size:0.9em; padding-left: 0;">
+              <li style="padding: 6px 0;"><i class="fa fa-check-circle accent-text w3-margin-right"></i>ServiceNow CSA</li>
+              <li style="padding: 6px 0;"><i class="fa fa-check-circle accent-text w3-margin-right"></i>ServiceNow CIS-Discovery</li>
+              <li style="padding: 6px 0;"><i class="fa fa-check-circle accent-text w3-margin-right"></i>Python PCAP & PCPP</li>
+              <li style="padding: 6px 0;"><i class="fa fa-check-circle accent-text w3-margin-right"></i>Docker, K8s & Terraform</li>
+              <li style="padding: 6px 0;"><i class="fa fa-check-circle accent-text w3-margin-right"></i>Cyber Security - Attack Prevention</li>
+            </ul>
           </div>
-
-          <!-- Education Card Section -->
-          <div class="w3-container w3-card w3-white w3-round-large w3-padding-24">
-            <h2 class="w3-text-grey w3-padding-8" style="font-weight:700; border-bottom: 2px solid #e2e8f0; margin-top:0;">
-              <i class="fa fa-graduation-cap fa-fw w3-margin-right accent-text"></i>Education
-            </h2>
-            <div class="w3-container w3-margin-top">
-              <h5 class="theme-text" style="font-weight:700; margin-bottom: 2px;">
-                <span class="editable" id="edu-degree">Master of Computer Applications (MCA) — Cyber Security</span>
-              </h5>
-              <h6 class="accent-text" style="margin-top: 0; font-weight: 600;">
-                <span class="editable" id="edu-school">Jain University, Bengaluru</span>
-                <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">2022 - 2024</span>
-              </h6>
-            </div>
-            <div class="w3-container w3-margin-top" style="border-top: 1px dashed #e2e8f0; padding-top: 12px;">
-              <h5 class="theme-text" style="font-weight:700; margin-bottom: 2px;">
-                <span class="editable" id="edu-degree2">Bachelor of Computer Applications (BCA) — Computer Science & IT</span>
-              </h5>
-              <h6 class="accent-text" style="margin-top: 0; font-weight: 600;">
-                <span class="editable" id="edu-school2">Jain University, Bengaluru</span>
-                <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">2018 - 2021</span>
-              </h6>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= VIEW 2: ABOUT & HOBBIES ================= -->
-    <section id="about" class="app-section">
-      <!-- Parallax Hero Block -->
-      <div class="parallax-hero w3-round-large">
-        <div class="parallax-overlay w3-round-large">
-          <span class="w3-tag w3-white w3-text-dark-grey w3-large w3-padding w3-round" style="letter-spacing: 4px; font-weight: 700;">
-            BEYOND THE DESK
-          </span>
-          <p class="w3-text-white w3-center w3-margin-top editable" id="parallax-sub" style="max-width: 600px; font-size: 1.1em; padding: 0 16px;">
-            How calculated security concepts, structural logic patterns, and modern automation tools influence enterprise architecture systems.
-          </p>
         </div>
       </div>
 
-      <!-- Modern Beyond Desk Container -->
-      <div class="beyond-desk-container" style="max-width: 1400px; margin: 30px auto 0 auto; padding: 0 8px;">
+      <!-- Right Main Column (2/3 Width) -->
+      <div class="w3-col l8 m12">
         
-        <div class="w3-container w3-card w3-white w3-round-large w3-padding-24">
-          <h2 class="w3-text-grey w3-padding-8" style="font-weight:700; border-bottom: 2px solid #10b981; margin-top:0;">
-            🌱 Beyond the Desk
+        <!-- Experience Card Section -->
+        <div class="w3-container w3-card w3-white w3-round-large w3-margin-bottom w3-padding-24">
+          <h2 class="w3-text-grey w3-padding-8" style="font-weight:700; border-bottom: 2px solid #e2e8f0; margin-top:0;">
+            <i class="fa fa-suitcase fa-fw w3-margin-right accent-text"></i>Work Experience
           </h2>
           
-          <div class="grid-layout" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px;">
+          <!-- Experience Item 1 -->
+          <div class="w3-container w3-margin-top">
+            <h5 class="theme-text" style="font-weight: 700; margin-bottom: 2px;">
+              <span class="editable" id="exp1-title">ServiceNow Platform Lead & Technical Lead</span>
+            </h5>
+            <h6 class="accent-text" style="margin-top:0; font-weight:600;">
+              <span class="editable" id="exp1-company">LTIMindtree</span>
+              <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">2024 - Present</span>
+            </h6>
             
-            <!-- PASSIONS CARD -->
-            <div class="card w3-card-2 card-hover w3-round-large" style="background: #fcfdfe; border: 1px solid #e2e8f0; padding: 24px;">
-              <h3 style="color: #1e3a2f; margin-top: 0; font-weight: 700;"><i class="fa fa-heart w3-margin-right accent-text"></i>My Passions</h3>
-              <ul class="editable" id="about-passions-list" style="padding-left: 20px; line-height: 1.8; color: #4a5568;">
-                <li><strong>Mental Wellness:</strong> Practicing mindfulness and maintaining a healthy work-life harmony.</li>
-                <li><strong>Sustainable Living:</strong> Exploring eco-friendly habits and reducing my daily carbon footprint.</li>
-                <li><strong>Continuous Learning:</strong> Diving into non-fiction books, audiobooks, and human psychology.</li>
-              </ul>
+            <!-- STAR Content Layout -->
+            <div class="w3-container w3-light-grey w3-leftbar w3-border-emerald w3-margin-bottom w3-padding-small">
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Team Leadership:</strong> Directed 2 cross-functional delivery teams across ITSM, CSM, and ITOM landscapes to maintain high-availability operations.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Stakeholder Alignment:</strong> Bridged the gap between C-level executives and development teams by converting business needs into technical architectures.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Risk Mitigation:</strong> Spearheaded complex, enterprise-scale platform upgrades and system migrations with zero business downtime.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Integration Architecture:</strong> Governed code reviews, release management, and custom IntegrationHub workflows while ensuring SAM/HAM compliance.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Data Governance:</strong> Aligned production environments with CSDM 4.0 frameworks, reducing CMDB configuration errors via strict audit cycles.
+              </p>
             </div>
-
-            <!-- HOBBIES CARD -->
-            <div class="card w3-card-2 card-hover w3-round-large" style="background: #fcfdfe; border: 1px solid #e2e8f0; padding: 24px;">
-              <h3 style="color: #10b981; margin-top: 0; font-weight: 700;"><i class="fa fa-dot-circle-o w3-margin-right" style="color:#10b981;"></i>Weekend Hobbies</h3>
-              <ul class="editable" id="about-hobbies-list" style="padding-left: 20px; line-height: 1.8; color: #4a5568;">
-                <li><strong>Fitness & Running:</strong> Hitting the local trails or tracking morning running goals.</li>
-                <li><strong>Specialty Coffee:</strong> Brewing different coffee beans and discovering local cafe spots.</li>
-                <li><strong>Photography:</strong> Capturing street life, landscapes, and urban architecture.</li>
-              </ul>
+          </div>
+          
+          <!-- Experience Item 2 -->
+          <div class="w3-container w3-margin-top">
+            <h5 class="theme-text" style="font-weight: 700; margin-bottom: 2px;">
+              <span class="editable" id="exp2-title">Senior ServiceNow Consultant & Administrator</span>
+            </h5>
+            <h6 class="accent-text" style="margin-top:0; font-weight:600;">
+              <span class="editable" id="exp2-company">LTIMindtree</span>
+              <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">2022 - 2024</span>
+            </h6>
+            
+            <div class="w3-container w3-light-grey w3-leftbar w3-border-emerald w3-margin-bottom w3-padding-small">
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">CMDB & CSDM 4.0 Governance:</strong> Administered CMDB modules, data reconciliation, and CI relationship mapping to increase overall platform health scores.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">ITOM Automation:</strong> Designed automated incident pipelines by integrating Grafana/Prometheus with Event Management, reducing MTTD for critical events.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">ITSM Workflow Engineering:</strong> Optimized core Incident, Change, Problem, and Knowledge workflows using Glide APIs, Script Includes, and Business Rules.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Incident Response & RCA:</strong> Hosted high-priority technical bridge calls, resolved critical platform escalations, and authored comprehensive RCA runbooks.
+              </p>
+               <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">QA & Release Management:</strong> Executed regression testing for platform releases to preserve Out-Of-The-Box (OOTB) features and compliance.
+              </p>
             </div>
+          </div>
 
-            <!-- BLOGS CARD -->
-            <div class="card w3-card-2 card-hover w3-round-large" style="background: #fcfdfe; border: 1px solid #e2e8f0; padding: 24px;">
-              <h3 style="color: #4a5568; margin-top: 0; font-weight: 700;"><i class="fa fa-pencil w3-margin-right accent-text"></i>Personal Blogs</h3>
-              <div class="editable" id="about-blogs-list" style="color: #4a5568; margin-top: 12px;">
-                <div style="margin-bottom: 20px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 12px;">
-                  <a href="#" style="color: #1e3a2f; font-weight: bold; text-decoration: none; display: block; margin-bottom: 4px;">Chasing Sunsets: My Travel Diaries</a>
-                  <small style="color: #64748b;"><i class="fa fa-tag w3-margin-right"></i>Personal Reflections • 5 min read</small>
-                </div>
-                <div style="margin-bottom: 12px;">
-                  <a href="#" style="color: #1e3a2f; font-weight: bold; text-decoration: none; display: block; margin-bottom: 4px;">Books That Changed My Perspective</a>
-                  <small style="color: #64748b;"><i class="fa fa-book w3-margin-right"></i>Reading List • 4 min read</small>
-                </div>
-              </div>
+          <!-- Experience Item 3 -->
+          <div class="w3-container w3-margin-top">
+            <h5 class="theme-text" style="font-weight: 700; margin-bottom: 2px;">
+              <span class="editable" id="exp3-title">ServiceNow & Anaplan Systems Administrator | Analyst</span>
+            </h5>
+            <h6 class="accent-text" style="margin-top:0; font-weight:600;">
+              <span class="editable" id="exp3-company">LTIMindtree / Enterprise Systems</span>
+              <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">2021 - 2022</span>
+            </h6>
+            
+            <div class="w3-container w3-light-grey w3-leftbar w3-border-emerald w3-margin-bottom w3-padding-small">
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Cross-Platform Administration:</strong> Managed platform maintenance, ACL-based security configurations, and user access controls across ServiceNow and Anaplan ecosystems.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Data Synchronization:</strong> Build secure automated connections and manage transactional data models across diverse operational modules.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">L2/L3 Incident Resolution:</strong> Led cross-platform troubleshooting and root cause analysis (RCA) while leveraging OOTB configurations to prevent regressions.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Workflow Automation:</strong> Architected automated Workflows and Service Catalogs using Flow Designer and Workflow Editor to reduce manual request backlogs.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">A2P Compliance Supervision:</strong> Supervised enterprise Application-to-Person messaging operations, auditing brand registrations and carrier pipelines for regulatory compliance.
+              </p>
             </div>
+          </div>
 
+          <!-- Experience Item 4 -->
+          <div class="w3-container w3-margin-top">
+            <h5 class="theme-text" style="font-weight: 700; margin-bottom: 2px;">
+              <span class="editable" id="exp4-title">Data Developer Intern</span>
+            </h5>
+            <h6 class="accent-text" style="margin-top:0; font-weight:600;">
+              <span class="editable" id="exp4-company">Embibe (Ed-Tech)</span>
+              <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">Apr 2019 - Sep 2019</span>
+            </h6>
+            <div class="w3-container w3-light-grey w3-leftbar w3-border-emerald w3-margin-bottom w3-padding-small">
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Data-Driven Insights:</strong> Built analytics workflows supporting personalized learning models to improve student engagement metrics within the ed-tech ecosystem.
+              </p>
+              <p style="margin: 4px 0;">
+                <strong class="w3-text-dark-grey">Workflow Automation:</strong> Automated backend data pipelines to streamline the delivery of educational performance insights.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Education Card Section -->
+        <div class="w3-container w3-card w3-white w3-round-large w3-padding-24">
+          <h2 class="w3-text-grey w3-padding-8" style="font-weight:700; border-bottom: 2px solid #e2e8f0; margin-top:0;">
+            <i class="fa fa-graduation-cap fa-fw w3-margin-right accent-text"></i>Education
+          </h2>
+          <div class="w3-container w3-margin-top">
+            <h5 class="theme-text" style="font-weight:700; margin-bottom: 2px;">
+              <span class="editable" id="edu-degree">Master of Computer Applications (MCA) — Cyber Security</span>
+            </h5>
+            <h6 class="accent-text" style="margin-top: 0; font-weight: 600;">
+              <span class="editable" id="edu-school">Jain University, Bengaluru</span>
+              <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">2022 - 2024</span>
+            </h6>
+          </div>
+          <div class="w3-container w3-margin-top" style="border-top: 1px dashed #e2e8f0; padding-top: 12px;">
+            <h5 class="theme-text" style="font-weight:700; margin-bottom: 2px;">
+              <span class="editable" id="edu-degree2">Bachelor of Computer Applications (BCA) — Computer Science & IT</span>
+            </h5>
+            <h6 class="accent-text" style="margin-top: 0; font-weight: 600;">
+              <span class="editable" id="edu-school2">Jain University, Bengaluru</span>
+              <span class="w3-tag theme-bg w3-round w3-small w3-right" style="padding: 4px 8px; font-weight: normal;">2018 - 2021</span>
+            </h6>
           </div>
         </div>
 
       </div>
-    </section>
-
-    <!-- ================= VIEW 3: BLOG STREAM VIEW ================= -->
-    <section id="blog" class="app-section">
-      <div class="w3-row-padding">
-        
-        <!-- Primary Article Stream Column (2/3 Width) -->
-        <div class="w3-col l8 m12 w3-margin-bottom">
-          
-          <!-- Article Box 1 -->
-          <article class="w3-card w3-white w3-round-large w3-margin-bottom card-hover" style="overflow: hidden;">
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" style="width:100%; height:250px; object-fit: cover;" alt="Monochrome Code View">
-            <div class="w3-container w3-padding-24">
-              <div class="w3-margin-bottom">
-                <span class="w3-tag theme-bg w3-round w3-small" style="padding: 4px 8px;">Architecture</span>
-                <span class="w3-text-grey w3-right" style="font-size: 0.9em;"><i class="fa fa-calendar-o w3-margin-right"></i>May 2026</span>
-              </div>
-              <h3 class="theme-text" style="font-weight:700; margin-top:0;">
-                <span class="editable" id="blog-title-1">Building Zero-Infrastructure Static Platforms</span>
-              </h3>
-              
-              <div class="w3-text-grey editable" id="blog-content-1" style="line-height: 1.6; font-size: 1em;">
-                <p>Deploying responsive, production-ready systems is often over-engineered with multi-tier CI/CD build scripts and runtime computing infrastructure. By packaging all styling logic, navigation mechanics, and routing controls into a single, highly structured, decoupled static file, engineers can utilize modern web standards to eliminate execution paths entirely.</p>
-                <p>Modern CDN capabilities provide sub-millisecond static deliveries directly at the edge, allowing single-file models to handle rich dynamic functions. When backed by browser-level states and visual templates, updates can be handled instantly in the browser without requiring compilation. This shift reduces system architecture costs, minimizes threat surfaces, and ensures standard-compliant performance that scales efficiently.</p>
-              </div>
-              
-              <div class="w3-row w3-margin-top w3-padding-16" style="border-top: 1px solid #f1f5f9;">
-                <div class="w3-col s8">
-                  <span class="w3-tag w3-light-grey w3-text-grey w3-round w3-small" style="margin-right:4px;">#StaticWeb</span>
-                  <span class="w3-tag w3-light-grey w3-text-grey w3-round w3-small" style="margin-right:4px;">#CDNDelivery</span>
-                  <span class="w3-tag w3-light-grey w3-text-grey w3-round w3-small">#VanillaJS</span>
-                </div>
-                <div class="w3-col s4 w3-right-align">
-                  <span class="theme-text" style="font-weight:600; cursor:pointer;" onclick="alert('Mock Article Link: This represents an interactive, custom article detail handler.');">Read Full Text <i class="fa fa-arrow-right"></i></span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Placeholder/Dynamic Mock Article Container -->
-          <article class="w3-card w3-white w3-round-large w3-padding-24 w3-center card-hover">
-            <i class="fa fa-plus-circle accent-text w3-xxlarge w3-margin-bottom"></i>
-            <h4 class="theme-text" style="font-weight:700; margin-top: 0;">Need to add another post?</h4>
-            <p class="w3-text-grey" style="max-width:480px; margin: 0 auto 16px auto;">Use the live edit toggle button in the lower corner of the viewport, click this block, and write your content directly inside the browser window before committing your edits.</p>
-          </article>
-        </div>
-
-        <!-- Blog Stream Sidebar Column (1/3 Width) -->
-        <div class="w3-col l4 m12">
-          
-          <!-- Author Info Card -->
-          <div class="w3-card w3-white w3-round-large w3-margin-bottom w3-padding-24">
-            <h4 class="theme-text" style="font-weight:700; margin-top:0; border-bottom: 2px solid #e2e8f0; padding-bottom:8px;">Author</h4>
-            <div class="w3-row w3-margin-top">
-              <div class="w3-col s3">
-                <!-- Fallback to raw path directly as main image element sources -->
-                <img src="https://raw.githubusercontent.com/sumaniyangar/sumaniyangar.github.io/main/0CB27915-A87D-429F-B685-2C9BB7DF2C02_1_105_c.jpeg" onerror="this.src='profile.jpg'" class="w3-circle" style="width:100%; max-width:60px; object-fit: cover; aspect-ratio: 1/1;" alt="Suman M">
-              </div>
-              <div class="w3-col s9 w3-container">
-                <h5 class="theme-text" style="margin:0; font-weight:700;">Suman M</h5>
-                <p class="w3-text-grey" style="margin:4px 0 0 0; font-size:0.9em;">Technical Architect interested in elegant UI, robust tooling, and reducing overhead.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tag Clouds Card -->
-          <div class="w3-card w3-white w3-round-large w3-padding-24">
-            <h4 class="theme-text" style="font-weight:700; margin-top:0; border-bottom: 2px solid #e2e8f0; padding-bottom:8px;">System Tags</h4>
-            <div class="w3-margin-top">
-              <span class="w3-tag w3-teal w3-round w3-margin-bottom" style="font-size:12px;">CSDM 4.0</span>
-              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">ServiceNow ITOM</span>
-              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">IntegrationHub</span>
-              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">SLA Automation</span>
-              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">Event Orchestration</span>
-              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">REST APIs</span>
-              <span class="w3-tag w3-dark-grey w3-round w3-margin-bottom" style="font-size:12px;">Docker & K8s</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
+    </div>
   </main>
 
   <!-- ================= EDIT TOGGLE FLOATING ACTION BUTTON ================= -->
@@ -529,71 +374,6 @@
 
   <!-- ================= VANILLA JAVASCRIPT CONTROLLER ================= -->
   <script>
-    /**
-     * Elegant Single Page Application Router
-     * Listens to URI anchor adjustments and transitions view nodes.
-     */
-    class PortfolioRouter {
-      constructor() {
-        this.sections = document.querySelectorAll('.app-section');
-        this.navLinks = document.querySelectorAll('.nav-link');
-        
-        // Dynamic route matching lookup
-        this.routes = {
-          '#work': 'work',
-          '#about': 'about',
-          '#blog': 'blog'
-        };
-
-        window.addEventListener('hashchange', () => this.handleRouting());
-        window.addEventListener('DOMContentLoaded', () => this.handleRouting());
-      }
-
-      handleRouting() {
-        let activeHash = window.location.hash || '#work';
-        
-        // Handle unexpected navigation values safely
-        if (!this.routes[activeHash]) {
-          activeHash = '#work';
-        }
-
-        const targetId = this.routes[activeHash];
-
-        this.sections.forEach(section => {
-          if (section.id === targetId) {
-            section.classList.add('active');
-          } else {
-            section.classList.remove('active');
-          }
-        });
-
-        // Sync and highlight current navigation tab
-        this.updateNavUi(activeHash);
-
-        // Smoothly return context view back to header
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }
-
-      updateNavUi(currentHash) {
-        this.navLinks.forEach(link => {
-          const matchingId = `nav-${this.routes[currentHash]}`;
-          if (link.id === matchingId) {
-            link.classList.remove('w3-text-dark-grey');
-            link.classList.add('theme-bg', 'w3-round');
-          } else {
-            link.classList.remove('theme-bg', 'w3-round');
-            link.classList.add('w3-text-dark-grey');
-          }
-        });
-      }
-    }
-
-    // Initialize SPA controller
-    const AppRouter = new PortfolioRouter();
-
     /**
      * Browser Viewport Live Editor Engine
      * Configures toggled HTML5 'contenteditable' configurations on designated fields.
