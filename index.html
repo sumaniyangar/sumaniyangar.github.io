@@ -57,7 +57,7 @@
       box-shadow: 0 4px 12px rgba(30, 58, 47, 0.08);
     }
 
-    /* Parallax Hero Banner with Technical Accent overlay */
+    /* Parallax Hero Banner with Raw Technical Image Background */
     .parallax-hero {
       position: relative;
       background-image: url('https://raw.githubusercontent.com/sumaniyangar/sumaniyangar.github.io/main/0CB27915-A87D-429F-B685-2C9BB7DF2C02_1_105_c.jpeg');
@@ -78,12 +78,6 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-    }
-
-    /* Progress Bar Animation Initial State */
-    .animated-progress {
-      width: 0%;
-      transition: width 1.2s cubic-bezier(0.1, 0.8, 0.2, 1);
     }
 
     /* Live Editing Hint Styling */
@@ -151,8 +145,8 @@
           <div class="w3-white w3-text-grey w3-card-4 w3-round-large w3-margin-bottom">
             <!-- Profile Presentation Image -->
             <div class="w3-display-container">
-              <!-- Using relative 'profile.jpg' with an Unsplash fallback in case the image hasn't finished uploading to your Github repo -->
-              <img src="profile.jpg" onerror="this.src='https://raw.githubusercontent.com/sumaniyangar/sumaniyangar.github.io/main/0CB27915-A87D-429F-B685-2C9BB7DF2C02_1_105_c.jpeg'" class="w3-round-medium" style="width:100%; object-fit: cover;" alt="Suman M Portrait">
+              <!-- Using Raw GitHub URL as direct source, with relative profile.jpg as fallback -->
+              <img src="https://raw.githubusercontent.com/sumaniyangar/sumaniyangar.github.io/main/0CB27915-A87D-429F-B685-2C9BB7DF2C02_1_105_c.jpeg" onerror="this.src='profile.jpg'" class="w3-round-medium" style="width:100%; object-fit: cover;" alt="Suman M Portrait">
               <div class="w3-display-bottomleft w3-container w3-text-white w3-black w3-opacity" style="width: 100%; padding: 12px 16px;">
                 <h2 class="editable" id="profile-name" style="margin:0; font-weight:700;">SUMAN M</h2>
               </div>
@@ -178,19 +172,65 @@
               </p>
               <hr style="border-top: 1px solid #e2e8f0;">
 
-              <!-- Core ServiceNow Progress Competencies -->
+              <!-- Core ServiceNow Progress Competencies (Star Ratings) -->
               <h5 class="w3-large w3-text-dark-grey" style="font-weight: 700;">
                 <i class="fa fa-gears fa-fw w3-margin-right accent-text"></i>Core Competencies
               </h5>
               
-              <p style="margin-bottom: 5px;">ServiceNow Administration & CSA</p>
+              <div style="margin-bottom: 12px;">
+                <p style="margin: 0 0 4px 0; font-size: 0.95em;">ServiceNow Administration & CSA</p>
+                <div style="font-size: 1.1em; letter-spacing: 3px;">
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                </div>
+              </div>
 
-              <p style="margin-bottom: 5px; margin-top: 15px;">ITSM, ITOM, CSM Module Deployments</p>
-              <p style="margin-bottom: 5px; margin-top: 15px;">CMDB & CSDM 4.0 Governance</p>
+              <div style="margin-bottom: 12px;">
+                <p style="margin: 0 0 4px 0; font-size: 0.95em;">ITSM, ITOM, CSM Module Deployments</p>
+                <div style="font-size: 1.1em; letter-spacing: 3px;">
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                </div>
+              </div>
 
-              <p style="margin-bottom: 5px; margin-top: 15px;">Integrations (REST/SOAP & IntegrationHub)</p>
+              <div style="margin-bottom: 12px;">
+                <p style="margin: 0 0 4px 0; font-size: 0.95em;">CMDB & CSDM 4.0 Governance</p>
+                <div style="font-size: 1.1em; letter-spacing: 3px;">
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star-o w3-text-grey" style="opacity: 0.5;"></i>
+                </div>
+              </div>
 
-              <p style="margin-bottom: 5px; margin-top: 15px;">System Monitoring (Grafana/Prometheus)</p>
+              <div style="margin-bottom: 12px;">
+                <p style="margin: 0 0 4px 0; font-size: 0.95em;">Integrations (REST/SOAP &amp; IntegrationHub)</p>
+                <div style="font-size: 1.1em; letter-spacing: 3px;">
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star-o w3-text-grey" style="opacity: 0.5;"></i>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 12px;">
+                <p style="margin: 0 0 4px 0; font-size: 0.95em;">System Monitoring (Grafana/Prometheus)</p>
+                <div style="font-size: 1.1em; letter-spacing: 3px;">
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star accent-text"></i>
+                  <i class="fa fa-star-o w3-text-grey" style="opacity: 0.5;"></i>
+                </div>
+              </div>
 
               <hr style="border-top: 1px solid #e2e8f0; margin-top: 24px;">
 
@@ -199,11 +239,11 @@
                 <i class="fa fa-certificate fa-fw w3-margin-right accent-text"></i>Certifications
               </h5>
               <ul class="w3-ul" style="font-size:0.9em; padding-left: 0;">
-                <li style="padding: 6px 0;">ServiceNow CSA</li>
-                <li style="padding: 6px 0;">ServiceNow CIS-Discovery</li>
-                <li style="padding: 6px 0;">Python PCAP & PCPP</li>
-                <li style="padding: 6px 0;">Docker, K8s & Terraform</li>
-                <li style="padding: 6px 0;">Cyber Security - Attack Prevention</li>
+                <li style="padding: 6px 0;"><i class="fa fa-check-circle accent-text w3-margin-right"></i>ServiceNow CSA</li>
+                <li style="padding: 6px 0;"><i class="fa fa-check-circle accent-text w3-margin-right"></i>ServiceNow CIS-Discovery</li>
+                <li style="padding: 6px 0;"><i class="fa fa-check-circle accent-text w3-margin-right"></i>Python PCAP & PCPP</li>
+                <li style="padding: 6px 0;"><i class="fa fa-check-circle accent-text w3-margin-right"></i>Docker, K8s & Terraform</li>
+                <li style="padding: 6px 0;"><i class="fa fa-check-circle accent-text w3-margin-right"></i>Cyber Security - Attack Prevention</li>
               </ul>
             </div>
           </div>
@@ -295,13 +335,13 @@
                   <strong class="w3-text-dark-grey">Data Synchronization:</strong> Build secure automated connections and manage transactional data models across diverse operational modules.
                 </p>
                 <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">L2/L3 Incident Resolution:</strong>  Led cross-platform troubleshooting and root cause analysis (RCA) while leveraging OOTB configurations to prevent regressions.
+                  <strong class="w3-text-dark-grey">L2/L3 Incident Resolution:</strong> Led cross-platform troubleshooting and root cause analysis (RCA) while leveraging OOTB configurations to prevent regressions.
                 </p>
                 <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Workflow Automation::</strong> Architected automated Workflows and Service Catalogs using Flow Designer and Workflow Editor to reduce manual request backlogs.
+                  <strong class="w3-text-dark-grey">Workflow Automation:</strong> Architected automated Workflows and Service Catalogs using Flow Designer and Workflow Editor to reduce manual request backlogs.
                 </p>
                 <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">A2P Compliance Supervision:</strong>Supervised enterprise Application-to-Person messaging operations, auditing brand registrations and carrier pipelines for regulatory compliance.
+                  <strong class="w3-text-dark-grey">A2P Compliance Supervision:</strong> Supervised enterprise Application-to-Person messaging operations, auditing brand registrations and carrier pipelines for regulatory compliance.
                 </p>
               </div>
             </div>
@@ -317,10 +357,10 @@
               </h6>
               <div class="w3-container w3-light-grey w3-leftbar w3-border-emerald w3-margin-bottom w3-padding-small">
                 <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Data-Driven Insights:</strong>Built analytics workflows supporting personalized learning models to improve student engagement metrics within the ed-tech ecosystem.
+                  <strong class="w3-text-dark-grey">Data-Driven Insights:</strong> Built analytics workflows supporting personalized learning models to improve student engagement metrics within the ed-tech ecosystem.
                 </p>
                 <p style="margin: 4px 0;">
-                  <strong class="w3-text-dark-grey">Workflow Automation:</strong>BAutomated backend data pipelines to streamline the delivery of educational performance insights.
+                  <strong class="w3-text-dark-grey">Workflow Automation:</strong> Automated backend data pipelines to streamline the delivery of educational performance insights.
                 </p>
               </div>
             </div>
@@ -370,57 +410,51 @@
         </div>
       </div>
 
-      <!-- Responsive 3-Column Strength Mapping Grid -->
-      <div class="w3-row-padding w3-margin-top">
+      <!-- Modern Beyond Desk Container -->
+      <div class="beyond-desk-container" style="max-width: 1400px; margin: 30px auto 0 auto; padding: 0 8px;">
         
-        <!-- Hobby Card 1 -->
-        <div class="w3-col l4 m12 s12 w3-margin-bottom">
-          <div class="w3-card w3-white w3-round-large w3-padding-24 card-hover" style="height: 100%; min-height: 380px;">
-            <div class="w3-center w3-margin-bottom">
-              <span class="accent-bg w3-circle w3-padding-16" style="display: inline-block; width: 60px; height: 60px; line-height: 28px;">
-                <i class="fa fa-shield w3-xlarge"></i>
-              </span>
+        <div class="w3-container w3-card w3-white w3-round-large w3-padding-24">
+          <h2 class="w3-text-grey w3-padding-8" style="font-weight:700; border-bottom: 2px solid #10b981; margin-top:0;">
+            🌱 Beyond the Desk
+          </h2>
+          
+          <div class="grid-layout" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 24px;">
+            
+            <!-- PASSIONS CARD -->
+            <div class="card w3-card-2 card-hover w3-round-large" style="background: #fcfdfe; border: 1px solid #e2e8f0; padding: 24px;">
+              <h3 style="color: #1e3a2f; margin-top: 0; font-weight: 700;"><i class="fa fa-heart w3-margin-right accent-text"></i>My Passions</h3>
+              <ul class="editable" id="about-passions-list" style="padding-left: 20px; line-height: 1.8; color: #4a5568;">
+                <li><strong>Mental Wellness:</strong> Practicing mindfulness and maintaining a healthy work-life harmony.</li>
+                <li><strong>Sustainable Living:</strong> Exploring eco-friendly habits and reducing my daily carbon footprint.</li>
+                <li><strong>Continuous Learning:</strong> Diving into non-fiction books, audiobooks, and human psychology.</li>
+              </ul>
             </div>
-            <h3 class="w3-center theme-text" style="font-weight:700;">Cyber Security</h3>
-            <p class="w3-center w3-text-grey" style="font-size:0.9em; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Defensive Design & Risk Controls</p>
-            <hr style="border-top: 1px solid #e2e8f0; width: 60%; margin: 12px auto;">
-            <p class="w3-text-grey editable" id="hobby-desc-1" style="line-height:1.6; font-size: 0.95em;">
-              A strong academic background in Cyber Security helps prioritize access controls, robust encryption frameworks, and rigorous threat management. Incorporating defensive designs directly into enterprise system deployments prevents software regressions, protects data, and safeguards assets across cloud operations.
-            </p>
-          </div>
-        </div>
 
-        <!-- Hobby Card 2 -->
-        <div class="w3-col l4 m12 s12 w3-margin-bottom">
-          <div class="w3-card w3-white w3-round-large w3-padding-24 card-hover" style="height: 100%; min-height: 380px;">
-            <div class="w3-center w3-margin-bottom">
-              <span class="accent-bg w3-circle w3-padding-16" style="display: inline-block; width: 60px; height: 60px; line-height: 28px;">
-                <i class="fa fa-terminal w3-xlarge"></i>
-              </span>
+            <!-- HOBBIES CARD -->
+            <div class="card w3-card-2 card-hover w3-round-large" style="background: #fcfdfe; border: 1px solid #e2e8f0; padding: 24px;">
+              <h3 style="color: #10b981; margin-top: 0; font-weight: 700;"><i class="fa fa-dot-circle-o w3-margin-right" style="color:#10b981;"></i>Weekend Hobbies</h3>
+              <ul class="editable" id="about-hobbies-list" style="padding-left: 20px; line-height: 1.8; color: #4a5568;">
+                <li><strong>Fitness & Running:</strong> Hitting the local trails or tracking morning running goals.</li>
+                <li><strong>Specialty Coffee:</strong> Brewing different coffee beans and discovering local cafe spots.</li>
+                <li><strong>Photography:</strong> Capturing street life, landscapes, and urban architecture.</li>
+              </ul>
             </div>
-            <h3 class="w3-center theme-text" style="font-weight:700;">Systems Observability</h3>
-            <p class="w3-center w3-text-grey" style="font-size:0.9em; font-weight:600; text-transform:uppercase; letter-spacing:1px;">SRE telemetry & Proactive Analysis</p>
-            <hr style="border-top: 1px solid #e2e8f0; width: 60%; margin: 12px auto;">
-            <p class="w3-text-grey editable" id="hobby-desc-2" style="line-height:1.6; font-size: 0.95em;">
-              Constructing real-time monitoring structures with Grafana and Prometheus builds solid observability skills. Translating metric tracking concepts into actionable dashboards ensures prompt issue detection and provides clear operational intelligence for cloud infrastructures.
-            </p>
-          </div>
-        </div>
 
-        <!-- Hobby Card 3 -->
-        <div class="w3-col l4 m12 s12 w3-margin-bottom">
-          <div class="w3-card w3-white w3-round-large w3-padding-24 card-hover" style="height: 100%; min-height: 380px;">
-            <div class="w3-center w3-margin-bottom">
-              <span class="accent-bg w3-circle w3-padding-16" style="display: inline-block; width: 60px; height: 60px; line-height: 28px;">
-                <i class="fa fa-code w3-xlarge"></i>
-              </span>
+            <!-- BLOGS CARD -->
+            <div class="card w3-card-2 card-hover w3-round-large" style="background: #fcfdfe; border: 1px solid #e2e8f0; padding: 24px;">
+              <h3 style="color: #4a5568; margin-top: 0; font-weight: 700;"><i class="fa fa-pencil w3-margin-right accent-text"></i>Personal Blogs</h3>
+              <div class="editable" id="about-blogs-list" style="color: #4a5568; margin-top: 12px;">
+                <div style="margin-bottom: 20px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 12px;">
+                  <a href="#" style="color: #1e3a2f; font-weight: bold; text-decoration: none; display: block; margin-bottom: 4px;">Chasing Sunsets: My Travel Diaries</a>
+                  <small style="color: #64748b;"><i class="fa fa-tag w3-margin-right"></i>Personal Reflections • 5 min read</small>
+                </div>
+                <div style="margin-bottom: 12px;">
+                  <a href="#" style="color: #1e3a2f; font-weight: bold; text-decoration: none; display: block; margin-bottom: 4px;">Books That Changed My Perspective</a>
+                  <small style="color: #64748b;"><i class="fa fa-book w3-margin-right"></i>Reading List • 4 min read</small>
+                </div>
+              </div>
             </div>
-            <h3 class="w3-center theme-text" style="font-weight:700;">Automation Scripting</h3>
-            <p class="w3-center w3-text-grey" style="font-size:0.9em; font-weight:600; text-transform:uppercase; letter-spacing:1px;">Python & Infrastructure-As-Code</p>
-            <hr style="border-top: 1px solid #e2e8f0; width: 60%; margin: 12px auto;">
-            <p class="w3-text-grey editable" id="hobby-desc-3" style="line-height:1.6; font-size: 0.95em;">
-              Writing programmatic workflows in Python, Docker, and Terraform reinforces DRY (Don't Repeat Yourself) design. Treating server setups as software configurations simplifies manual processes and creates scalable, automated environments.
-            </p>
+
           </div>
         </div>
 
@@ -478,9 +512,11 @@
           <!-- Author Info Card -->
           <div class="w3-card w3-white w3-round-large w3-margin-bottom w3-padding-24">
             <h4 class="theme-text" style="font-weight:700; margin-top:0; border-bottom: 2px solid #e2e8f0; padding-bottom:8px;">Author</h4>
-            <div class="w3-col s3">
-              <img src="profile.jpg" onerror="this.src='https://raw.githubusercontent.com/sumaniyangar/sumaniyangar.github.io/main/0CB27915-A87D-429F-B685-2C9BB7DF2C02_1_105_c.jpeg'" class="w3-circle" style="width:100%; max-width:60px;" alt="Suman M">
-            </div>
+            <div class="w3-row w3-margin-top">
+              <div class="w3-col s3">
+                <!-- Fallback to raw path directly as main image element sources -->
+                <img src="https://raw.githubusercontent.com/sumaniyangar/sumaniyangar.github.io/main/0CB27915-A87D-429F-B685-2C9BB7DF2C02_1_105_c.jpeg" onerror="this.src='profile.jpg'" class="w3-circle" style="width:100%; max-width:60px; object-fit: cover; aspect-ratio: 1/1;" alt="Suman M">
+              </div>
               <div class="w3-col s9 w3-container">
                 <h5 class="theme-text" style="margin:0; font-weight:700;">Suman M</h5>
                 <p class="w3-text-grey" style="margin:4px 0 0 0; font-size:0.9em;">Technical Architect interested in elegant UI, robust tooling, and reducing overhead.</p>
@@ -560,11 +596,6 @@
         this.sections.forEach(section => {
           if (section.id === targetId) {
             section.classList.add('active');
-            
-            // Trigger specific page load actions (e.g., Progress Bar transitions)
-            if (targetId === 'work') {
-              this.animateProgressBars();
-            }
           } else {
             section.classList.remove('active');
           }
@@ -591,17 +622,6 @@
             link.classList.add('w3-text-dark-grey');
           }
         });
-      }
-
-      animateProgressBars() {
-        // Find competencies with dynamic targets and animate width
-        const progressElements = document.querySelectorAll('.animated-progress');
-        setTimeout(() => {
-          progressElements.forEach(el => {
-            const target = el.getAttribute('data-target-width') || '0%';
-            el.style.width = target;
-          });
-        }, 150); // Small operational buffer to allow rendering threads to complete
       }
     }
 
